@@ -1,0 +1,17 @@
+name = "camofox-mcp"
+main = "src/worker.ts"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+# ---------------------------------------------------------------------------
+# Default vars — override CAMOFOX_URL with a secret for production:
+#   wrangler secret put CAMOFOX_URL
+# ---------------------------------------------------------------------------
+[vars]
+CAMOFOX_URL = "http://localhost:9377"
+
+# ---------------------------------------------------------------------------
+# Secrets (set with `wrangler secret put <NAME>`):
+#   CAMOFOX_URL      — URL of your running camofox-browser server
+#   CAMOFOX_API_KEY  — API key for cookie import (matches server CAMOFOX_API_KEY)
+# ---------------------------------------------------------------------------
