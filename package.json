@@ -58,7 +58,9 @@
     "test:debug": "DEBUG_SERVER=1 NODE_OPTIONS='--experimental-vm-modules' jest --runInBand --forceExit",
     "version:sync": "node scripts/sync-version.js",
     "version": "node scripts/sync-version.js && git add openclaw.plugin.json",
-    "postinstall": "npx camoufox-js fetch || true"
+    "postinstall": "npx camoufox-js fetch || true",
+    "worker:dev": "wrangler dev src/worker.ts",
+    "worker:deploy": "wrangler deploy"
   },
   "dependencies": {
     "camoufox-js": "^0.8.5",
@@ -69,7 +71,9 @@
     "puppeteer-extra-plugin-stealth": "^2.11.2"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
     "jest": "^29.7.0",
-    "pngjs": "^7.0.0"
+    "pngjs": "^7.0.0",
+    "wrangler": "^3.0.0"
   }
 }
